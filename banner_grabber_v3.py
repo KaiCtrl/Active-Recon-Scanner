@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 """
-Active Reconnaissance & CVE Vulnerability Assessment Engine (Week 1 - Day 4 v3)
--------------------------------------------------------------------------------
-Upgrades the active port scanner with:
-  1. Regex-based version extraction and pattern matching.
-  2. CVSS v3.1 severity scoring, CVE identifier mapping, and remediation guidance.
-  3. Automated FTP anonymous authentication checking.
-  4. Client-ready Markdown report generation with vulnerability metrics.
-
-Usage:
-    python banner_grabber_v3.py --target 10.0.24.110
-    python banner_grabber_v3.py --target 10.0.24.110 --threads 10
+Active Reconnaissance &amp; Vulnerability Assessment Tool (v3) 
+------------------------------------------------------------------------- 
+LEGAL &amp; ETHICAL DISCLAIMER: This tool is developed strictly for educational purposes, defensive home lab research, and authorized security assessments.
+Executing active network probes against targets without prior written permission is illegal and violates network security policies.
+The developer assumes no liability for unauthorized or misuse of this software.
+------------------------------------------------------------------------- 
 """
 
 import argparse
