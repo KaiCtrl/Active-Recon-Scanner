@@ -1,7 +1,11 @@
 # Active-Recon-Scanner
-Active Reconnaissance &amp; Vulnerability Assessment Tool
-A multi-threaded Python TCP port scanner and vulnerability assessment tool that probes network services, extracts service banners, identifies potential CVE signatures using Regular Expressions, and exports structured Markdown assessment reports formatted with CVSS v3.1 risk metrics.
 
+Legal & Ethical Disclaimer 
+
+This repository and its scripts are intended strictly for educational purposes, authorized security testing, and research within controlled lab environments [1, 2]. - \*\*Authorized Testing Only\*\*: Active reconnaissance and scanning against targets without explicit, written permission from the system owner is illegal [2-4]. - \*\*No Liability\*\*: The author assumes no responsibility or liability for any misuse, damage, or unauthorized activities conducted with this tool. - \*\*License\*\*: Released under the [MIT License](LICENSE).
+---
+Active Reconnaissance & Vulnerability Assessment Tool
+A multi-threaded Python TCP port scanner and vulnerability assessment tool that probes network services, extracts service banners, identifies potential CVE signatures using Regular Expressions, and exports structured Markdown assessment reports formatted with CVSS v3.1 risk metrics.
 
 ---
 ## 🛠️ Key Features
@@ -18,3 +22,20 @@ A multi-threaded Python TCP port scanner and vulnerability assessment tool that 
 -  ### Prerequisites
 -  - Python 3.8+ - Standard libraries: \`socket\`, \`ftplib\`, \`argparse\`, \`concurrent.futures\`, \`re\`
    - ### Basic Command \`\`\`bash python3 banner\_grabber\_v3.py --target 10.0.24.110
+
+
+
+
+## 📊 Sample Assessment Report Output
+
+| Port | Status   | Service Banner          | Discovered Risk Count |
+| ---- | -------- | ----------------------- | --------------------- |
+| `21` | **Open** | `vsFTPd 2.3.4`          | 🔴 **1 Risk(s)**      |
+| `80` | **Open** | `Apache/2.2.8 (Ubuntu)` | 🔴 **1 Risk(s)**      |
+
+### Identified CVE Findings Table
+
+| Port | CVE ID          | CVSS v3.1 | Severity        | Threat Title &amp; Remediation                                                                                  |
+| ---- | --------------- | --------- | --------------- | ----------------------------------------------------------------------------------------------------------- |
+| `21` | `CVE-2011-2523` | **9.8**   | 🔴 **CRITICAL** | **vsFTPd 2.3.4 Backdoor Command Execution**<br />*Fix:* Upgrade vsFTPd to version 3.0+ or remove FTP service. |
+| `80` | `CVE-2017-9798` | **7.5**   | 🟠 **HIGH**     | **Apache HTTP Server 2.2.x Optionsbleed**<br />*Fix:* Patch Apache HTTP Server to 2.4.x branch.               |
